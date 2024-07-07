@@ -28,10 +28,10 @@ class WildCropComponent {
             return;
         if (!container)
             return;
-        const selectedSlot = container?.getSlot(player.selectedSlotIndex);
-        const itemId = selectedSlot.typeId;
-        const silkTouch = container?.getItem(player.selectedSlotIndex)?.getComponent(ItemComponentTypes.Enchantable)?.hasEnchantment("silk_touch");
         try {
+            const selectedSlot = container?.getSlot(player.selectedSlotIndex);
+            const itemId = selectedSlot.typeId;
+            const silkTouch = container?.getItem(player.selectedSlotIndex)?.getComponent(ItemComponentTypes.Enchantable)?.hasEnchantment("silk_touch");
             if (itemId == "minecraft:shears") {
                 ItemUtil.damageItem(container, player.selectedSlotIndex, 1);
                 ItemUtil.spawnItem(block, lootItem);

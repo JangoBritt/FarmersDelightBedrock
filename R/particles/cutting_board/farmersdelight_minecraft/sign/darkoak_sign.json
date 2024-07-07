@@ -45,7 +45,7 @@
                 "material": "particles_alpha", 
                 "texture": "textures/items/sign_darkoak"
             }, 
-            "identifier": "farmersdelight:minecraft_darkoak_sign"
+            "identifier": "farmersdelight:minecraft_dark_oak_sign"
         }
     }
 }
