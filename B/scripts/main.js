@@ -30,6 +30,7 @@ import { OrganicCompostComonentRegister } from "./customComponents/block/Organic
 import { RopeComponentRegister } from "./customComponents/block/RopeComponent";
 import { TatamMatComponentRegister } from "./customComponents/block/TatamMatComponent";
 import { TatamComponentRegister } from "./customComponents/block/TatamiComponent";
+import { StoveComponentRegister } from "./customComponents/block/StoveComponent";
 CookingPotRecipeRegistries.initCookingPotScoRegistries();
 CuttingBoardRegistries.initCuttingBoardScoRegistries();
 CookRecipeRegistries.initCookScoRegistries();
@@ -61,6 +62,7 @@ new OrganicCompostComonentRegister();
 new RopeComponentRegister();
 new TatamMatComponentRegister();
 new TatamComponentRegister();
+new StoveComponentRegister();
 new ColoniesComonentRegister();
 new RiceSeedComponentRegister();
 //# sourceMappingURL=main.js.map

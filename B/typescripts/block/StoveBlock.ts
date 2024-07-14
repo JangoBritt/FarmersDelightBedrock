@@ -35,61 +35,40 @@ export class StoveBlock extends BlockWithEntity {
         const air: Block | undefined = player.dimension.getBlock({ x: x, y: y + 1, z: z });
         if (entity && sco && air?.typeId == "minecraft:air") {
             const amount: number = sco.getScore('amount') ?? 0;
-            if (itemStack.typeId == "farmersdelight:cooking_pot") {
-                ItemUtil.clearItem(container, player.selectedSlotIndex);
+            if (vanillaItemList.includes(itemStack.typeId) || itemStack.hasTag('farmersdelight:can_cook')) {
+                if (amount < 6) {
+                    sco.setScore('amount', amount + 1);
+                    sco.setScore(`${itemStack.typeId}/${amount + 1}`, 30);
+                    if (EntityUtil.gameMode(player)) ItemUtil.clearItem(container, player.selectedSlotIndex);
+                }
             }
             else {
-                if (vanillaItemList.includes(itemStack.typeId) || itemStack.hasTag('farmersdelight:can_cook')) {
-                    if (amount < 6) {
-                        sco.setScore('amount', amount + 1);
-                        sco.setScore(`${itemStack.typeId}/${amount + 1}`, 30);
-                        if (EntityUtil.gameMode(player)) ItemUtil.clearItem(container, player.selectedSlotIndex);
-                    }
+                const arr: string[] = [];
+                const itemStackScoresData: ScoreboardScoreInfo[] = sco.getScores();
+                for (const itemStackData of itemStackScoresData) {
+                    const itemStack: string = itemStackData.participant.displayName;
+                    if (itemStack == 'amount') continue;
+                    arr.push(itemStack);
                 }
-                else {
-                    const arr: string[] = [];
-                    const itemStackScoresData: ScoreboardScoreInfo[] = sco.getScores();
-                    for (const itemStackData of itemStackScoresData) {
-                        const itemStack: string = itemStackData.participant.displayName;
-                        if (itemStack == 'amount') continue;
-                        arr.push(itemStack);
-                    }
-                    for (let i = 0; i < arr.length - 1; i++) {
-                        for (let j = 0; j < arr.length - 1 - i; j++) {
-                            const num1: number = parseInt(arr[j].split('/')[1]);
-                            const num2: number = parseInt(arr[j + 1].split('/')[1]);
-                            if (num1 > num2) {
-                                [arr[j + 1], arr[j]] = [arr[j], arr[j + 1]]
-                            }
+                for (let i = 0; i < arr.length - 1; i++) {
+                    for (let j = 0; j < arr.length - 1 - i; j++) {
+                        const num1: number = parseInt(arr[j].split('/')[1]);
+                        const num2: number = parseInt(arr[j + 1].split('/')[1]);
+                        if (num1 > num2) {
+                            [arr[j + 1], arr[j]] = [arr[j], arr[j + 1]]
                         }
                     }
-                    if (arr.length && sco) {
-                        const itemStackData: string = arr[amount - 1];
-                        const itemStack: string = itemStackData.split('/')[0];
-                        sco.removeParticipant(itemStackData);
-                        sco.setScore('amount', (sco.getScore('amount') ?? 0) - 1);
-                        entity.dimension.spawnItem(new ItemStack(itemStack), entity.location);
-                    }
+                }
+                if (arr.length && sco) {
+                    const itemStackData: string = arr[amount - 1];
+                    const itemStack: string = itemStackData.split('/')[0];
+                    sco.removeParticipant(itemStackData);
+                    sco.setScore('amount', (sco.getScore('amount') ?? 0) - 1);
+                    entity.dimension.spawnItem(new ItemStack(itemStack), entity.location);
                 }
             }
 
         }
-        const block: Block = args.block;
-        if (itemStack.typeId == "minecraft:water_bucket" && block.permutation.getState('farmersdelight:is_working') == true) {
-            const bucket = new ItemStack("minecraft:bucket")
-            ItemUtil.replaceItem(player, player.selectedSlotIndex, bucket)
-            block.setPermutation(block.permutation.withState('farmersdelight:is_working', false));
-            world.playSound("random.fizz",{ x, y, z })
-        }
-        if (itemStack.hasTag("minecraft:is_shovel") && block.permutation.getState('farmersdelight:is_working') == true) {
-            ItemUtil.damageItem(container,player.selectedSlotIndex)
-            block.setPermutation(block.permutation.withState('farmersdelight:is_working', false));
-            world.playSound("random.fizz",{ x, y, z })
-        }
-        if (itemStack.typeId == "minecraft:flint_and_steel"&& block.permutation.getState('farmersdelight:is_working') == false) {
-            ItemUtil.damageItem(container,player.selectedSlotIndex)
-            block.setPermutation(block.permutation.withState('farmersdelight:is_working', true));
-            world.playSound("fire.ignite",{ x, y, z })
-        }
+        
     }
 }
