@@ -122,7 +122,8 @@
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 6
             },
-            "minecraft:geometry": "geometry.stove_block"
+            "minecraft:geometry": "geometry.stove_block",
+            "tag:farmersdelight:stove": {}
         }
     }
 }

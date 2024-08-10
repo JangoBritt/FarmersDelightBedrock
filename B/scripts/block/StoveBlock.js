@@ -16,19 +16,19 @@ import { ItemUtil } from "../lib/ItemUtil";
 export class StoveBlock extends BlockWithEntity {
     placeBlock(args) {
         const block = args.block;
-        if (block.typeId != "farmersdelight:stove")
+        if (!block.hasTag("farmersdelight:stove"))
             return;
         //放置直接为点燃状态
         block.setPermutation(block.permutation.withState('farmersdelight:is_working', true));
         const { x, y, z } = block.location;
-        const entity = super.setBlock(args.block.dimension, { x: x + 0.5, y: y, z: z + 0.5 }, "farmersdelight:stove");
+        const entity = super.setBlock(args.block.dimension, { x: x + 0.5, y: y, z: z + 0.5 }, block.typeId);
         world.scoreboard.addObjective(entity.typeId + entity.id, entity.id).setScore('amount', 0);
     }
     useOnBlock(args) {
-        if (args?.block?.typeId !== "farmersdelight:stove")
+        if (!args.block.hasTag("farmersdelight:stove"))
             return;
         const data = super.entityBlockData(args.block, {
-            type: 'farmersdelight:stove',
+            type: args.block.typeId,
             location: args.block.location
         });
         const player = args.source;
