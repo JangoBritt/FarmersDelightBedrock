@@ -1,4 +1,4 @@
-import { Block, Entity, ScoreboardObjective, ScoreboardScoreInfo, Vector3, system, world } from "@minecraft/server";
+import { Block, DataDrivenEntityTriggerAfterEvent, Entity, ScoreboardObjective, ScoreboardScoreInfo, Vector3, system, world } from "@minecraft/server";
 import { methodEventSub } from "../../lib/eventHelper";
 import { BlockEntity } from "./BlockEntity";
 
@@ -45,8 +45,8 @@ function itemStackArr(scores: ScoreboardScoreInfo[]): string[] {
 
 
 export class StoveBlockEntity extends BlockEntity {
-    @methodEventSub(world.afterEvents.dataDrivenEntityTrigger, { entityTypes: ["farmersdelight:stove"], eventTypes: ["farmersdelight:stove_tick"] })
-    tick(args: any) {
+    @methodEventSub(world.afterEvents.dataDrivenEntityTrigger, {eventTypes: ["farmersdelight:stove_tick"] })
+    tick(args:DataDrivenEntityTriggerAfterEvent) {
         const entityBlockData = super.blockEntityData(args.entity);
         if (!entityBlockData) return;
         const block: Block = entityBlockData.block;
@@ -109,6 +109,6 @@ export class StoveBlockEntity extends BlockEntity {
                 );
             }
         }
-        super.blockEntityLoot(entityBlockData, "farmersdelight:stove", itemStackArr(itemStackScoresData) ?? null);
+        super.blockEntityLoot(entityBlockData, entityBlockData.entity.typeId, itemStackArr(itemStackScoresData) ?? null);
     }
 }
