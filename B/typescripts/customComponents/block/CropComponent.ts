@@ -40,7 +40,7 @@ class CropsComponent implements BlockCustomComponent {
 
             }
             if (age == 7) {
-                block.setPermutation(block.permutation.withState("farmersdelight:growth", 0))
+                block.setPermutation(block.permutation.withState("farmersdelight:growth", this.getHarvest()))
                 spawnLoot(lootTable, dimension, { x: block.location.x, y: block.location.y, z: block.location.z })
             }
         } catch (error) {
@@ -60,6 +60,10 @@ class CropsComponent implements BlockCustomComponent {
         return "";
 
     }
+    getHarvest(): number {
+        return 0;
+
+    }
 
 }
 class CabbageComponent extends CropsComponent {
@@ -77,6 +81,10 @@ class OnionComponent extends CropsComponent {
 class TomatoComponent extends CropsComponent {
     getLootTable(): string {
         return "farmersdelight/crops/farmersdelight_tomato_riped";
+
+    }
+    getHarvest(): number {
+        return 4;
 
     }
 }

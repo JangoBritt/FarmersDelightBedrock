@@ -83,9 +83,8 @@ export class Knife {
             if (blockTypeId == "minecraft:tallgrass") {
                 spawnLoot('farmersdelight/straw_from_grass', block.dimension, block.location);
             }
-            else if (blockTypeId == "minecraft:double_plant") {
-                const type = permutation.getState('double_plant_type');
-                if (type == 'grass' || type == 'fern') spawnLoot('farmersdelight/straw_from_grass', block.dimension, block.location);
+            else if (blockTypeId == "minecraft:short_grass"||blockTypeId == "minecraft:fern") {
+                spawnLoot('farmersdelight/straw_from_grass', block.dimension, block.location);
             }
             else if (blockTypeId == "minecraft:wheat") {
                 const age = permutation.getState('growth');
