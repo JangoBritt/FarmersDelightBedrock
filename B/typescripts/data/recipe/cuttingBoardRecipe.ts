@@ -85,7 +85,9 @@ const BlockofPickaxeList: string[] = [
     "minecraft:amethyst_block",
     "minecraft:bricks",
     "minecraft:deepslate",
-    //"minecraft:quartz_block",
+    "minecraft:quartz_block",
+    "minecraft:quartz_block",
+    "minecraft:quartz_block",
     "minecraft:stone",
     "minecraft:nether_brick"
 ];

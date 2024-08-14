@@ -17,8 +17,7 @@
                 "minecraft:placement_direction": {
                     "enabled_states": [
                         "minecraft:cardinal_direction"
-                    ],
-                    "y_rotation_offset": 180.0
+                    ]
                 }
             }
         },
@@ -84,7 +83,7 @@
                         "down": {
                             "texture": "dark_oak_cabinet_top"
                         },
-                        "south": {
+                        "north": {
                             "texture": "dark_oak_cabinet_front"
                         }
                     }
@@ -103,7 +102,7 @@
                         "down": {
                             "texture": "dark_oak_cabinet_top"
                         },
-                        "south": {
+                        "north": {
                             "texture": "dark_oak_cabinet_front_open"
                         }
                     }
