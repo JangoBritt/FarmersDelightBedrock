@@ -59,7 +59,7 @@ class RichSoilComponent {
 }
 export class RichSoilComponentRegister {
     register(args) {
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:rich_soil', new RichSoilComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:rich_soil', new RichSoilComponent());
     }
 }
 __decorate([

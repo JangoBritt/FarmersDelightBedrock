@@ -41,7 +41,7 @@ class RiceRollMedleyComponent {
 }
 export class RiceRollMedleyComponentRegister {
     register(args) {
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:rice_roll_medley', new RiceRollMedleyComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:rice_roll_medley', new RiceRollMedleyComponent());
     }
 }
 __decorate([

@@ -87,7 +87,7 @@ class TatamMatComponent implements BlockCustomComponent {
 export class TatamComponentRegister {
     @methodEventSub(world.beforeEvents.worldInitialize)
     register(args: WorldInitializeBeforeEvent) {
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:tatami', new TatamMatComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:tatami', new TatamMatComponent());
     }
 
 }

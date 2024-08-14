@@ -91,7 +91,7 @@ class TatamMatComponent {
 }
 export class TatamComponentRegister {
     register(args) {
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:tatami', new TatamMatComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:tatami', new TatamMatComponent());
     }
 }
 __decorate([

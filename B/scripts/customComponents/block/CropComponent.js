@@ -361,16 +361,16 @@ class RiceComponent {
 }
 export class CropComponentRegister {
     register(args) {
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:cabbage', new CabbageComponent());
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:onion', new OnionComponent());
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:tomato', new TomatoComponent());
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:beetroot', new Beetrootomponent());
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:carrot', new CarrotComponent());
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:potato', new PotatoComponent());
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:wheat', new WheatComponent());
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:torchflower', new TorchflowerComponent());
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:sugar_cane', new SugarCaneComponent());
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:rice', new RiceComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:cabbage', new CabbageComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:onion', new OnionComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:tomato', new TomatoComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:beetroot', new Beetrootomponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:carrot', new CarrotComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:potato', new PotatoComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:wheat', new WheatComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:torchflower', new TorchflowerComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:sugar_cane', new SugarCaneComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:rice', new RiceComponent());
     }
 }
 __decorate([

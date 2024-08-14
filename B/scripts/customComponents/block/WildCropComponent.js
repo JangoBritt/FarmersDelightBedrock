@@ -157,14 +157,14 @@ class SandyShrubComponent extends WildCropComponent {
 }
 export class WildCropComponentRegister {
     register(args) {
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:wild_beetroots', new WildBeetrootsComponent());
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:wild_cabbages', new WildCabbagesComponent());
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:wild_carrots', new WildCarrotComponent());
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:wild_onions', new WildOnionComponent());
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:wild_potatoes', new WildPotatoComponent());
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:wild_tomatoes', new WildTomatoComponent());
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:wild_rice', new WildRiceComponent());
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:sandy_shrub', new SandyShrubComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:wild_beetroots', new WildBeetrootsComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:wild_cabbages', new WildCabbagesComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:wild_carrots', new WildCarrotComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:wild_onions', new WildOnionComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:wild_potatoes', new WildPotatoComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:wild_tomatoes', new WildTomatoComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:wild_rice', new WildRiceComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:sandy_shrub', new SandyShrubComponent());
     }
 }
 __decorate([

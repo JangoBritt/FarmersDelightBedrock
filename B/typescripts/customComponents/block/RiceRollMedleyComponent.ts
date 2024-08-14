@@ -35,7 +35,7 @@ class RiceRollMedleyComponent implements BlockCustomComponent {
 export class RiceRollMedleyComponentRegister{
     @methodEventSub(world.beforeEvents.worldInitialize)
     register(args:WorldInitializeBeforeEvent){
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:rice_roll_medley', new RiceRollMedleyComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:rice_roll_medley', new RiceRollMedleyComponent());
     }
   
 }

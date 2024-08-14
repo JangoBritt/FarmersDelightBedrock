@@ -59,7 +59,7 @@ class RichSoilComponent implements BlockCustomComponent {
 export class RichSoilComponentRegister {
     @methodEventSub(world.beforeEvents.worldInitialize)
     register(args: WorldInitializeBeforeEvent) {
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:rich_soil', new RichSoilComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:rich_soil', new RichSoilComponent());
     }
 
 }

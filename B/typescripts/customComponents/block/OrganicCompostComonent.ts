@@ -45,7 +45,7 @@ class OrganicCompostComonent implements BlockCustomComponent {
 export class OrganicCompostComonentRegister {
     @methodEventSub(world.beforeEvents.worldInitialize)
     register(args: WorldInitializeBeforeEvent) {
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:organic_compost', new OrganicCompostComonent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:organic_compost', new OrganicCompostComonent());
     }
 
 }

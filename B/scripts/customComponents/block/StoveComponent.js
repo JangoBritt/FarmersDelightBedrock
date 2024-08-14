@@ -51,7 +51,7 @@ export class StoveComponent {
 }
 export class StoveComponentRegister {
     register(args) {
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:stove', new StoveComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:stove', new StoveComponent());
     }
 }
 __decorate([

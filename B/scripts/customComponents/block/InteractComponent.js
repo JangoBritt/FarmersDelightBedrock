@@ -17,7 +17,7 @@ export class InteractComponent {
 }
 export class InteractComponentRegister {
     register(args) {
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:interact', new InteractComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:interact', new InteractComponent());
     }
 }
 __decorate([

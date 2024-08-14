@@ -38,7 +38,7 @@ export class StoveComponent implements BlockCustomComponent {
 export class StoveComponentRegister{
     @methodEventSub(world.beforeEvents.worldInitialize)
     register(args:WorldInitializeBeforeEvent){
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:stove', new StoveComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:stove', new StoveComponent());
     }
   
 }

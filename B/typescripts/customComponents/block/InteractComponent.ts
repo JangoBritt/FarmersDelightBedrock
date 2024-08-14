@@ -12,7 +12,7 @@ export class InteractComponent implements BlockCustomComponent {
 export class InteractComponentRegister{
     @methodEventSub(world.beforeEvents.worldInitialize)
     register(args:WorldInitializeBeforeEvent){
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:interact', new InteractComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:interact', new InteractComponent());
     }
   
 }

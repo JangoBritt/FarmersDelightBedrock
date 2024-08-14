@@ -151,7 +151,7 @@ export class RopeComponent {
 }
 export class RopeComponentRegister {
     register(args) {
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:rope', new RopeComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:rope', new RopeComponent());
     }
 }
 __decorate([

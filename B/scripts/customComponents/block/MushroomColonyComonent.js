@@ -110,7 +110,7 @@ class MushroomColonyComonent {
 }
 export class MushroomColonyComonentRegister {
     register(args) {
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:mushroom_colony', new MushroomColonyComonent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:mushroom_colony', new MushroomColonyComonent());
     }
 }
 __decorate([

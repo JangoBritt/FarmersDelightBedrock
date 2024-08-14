@@ -101,7 +101,7 @@ class MushroomColonyComonent implements BlockCustomComponent {
 export class MushroomColonyComonentRegister{
     @methodEventSub(world.beforeEvents.worldInitialize)
     register(args:WorldInitializeBeforeEvent){
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:mushroom_colony', new MushroomColonyComonent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:mushroom_colony', new MushroomColonyComonent());
     }
   
 }

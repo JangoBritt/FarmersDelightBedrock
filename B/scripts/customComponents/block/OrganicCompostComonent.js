@@ -55,7 +55,7 @@ class OrganicCompostComonent {
 }
 export class OrganicCompostComonentRegister {
     register(args) {
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:organic_compost', new OrganicCompostComonent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:organic_compost', new OrganicCompostComonent());
     }
 }
 __decorate([

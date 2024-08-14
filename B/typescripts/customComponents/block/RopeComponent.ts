@@ -158,7 +158,7 @@ export class RopeComponent implements BlockCustomComponent {
 export class RopeComponentRegister {
     @methodEventSub(world.beforeEvents.worldInitialize)
     register(args: WorldInitializeBeforeEvent) {
-        args.blockTypeRegistry.registerCustomComponent('farmersdelight:rope', new RopeComponent());
+        args.blockComponentRegistry.registerCustomComponent('farmersdelight:rope', new RopeComponent());
     }
 
 }
