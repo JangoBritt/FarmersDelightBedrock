@@ -195,6 +195,7 @@
             {
                 "condition": "query.block_state('farmersdelight:growth') == 7",
                 "components": {
+                    "minecraft:loot": "loot_tables/farmersdelight/crops/farmersdelight_onion_riped.json",
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "onions_stage3",
@@ -251,7 +252,7 @@
                 ]
             },
             "tag:crop": {},
-            "tag:max_growth:3": {},
+            "tag:max_growth:7": {},
             "tag:growth_property:farmersdelight:growth": {}
         }
     }
