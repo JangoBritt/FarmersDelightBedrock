@@ -35,7 +35,6 @@ export class ItemUtil {
         if (!container) return;
         const itemStack = container?.getItem(slot)
         if (!itemStack) return;
-        container.addItem(replaceItemStack)
         if (player.getGameMode() == GameMode.creative) return;
         const itemAmount = itemStack.amount;
         const amount = itemAmount - 1;
@@ -48,6 +47,7 @@ export class ItemUtil {
             newItemStack.amount = amount
             container.setItem(slot, newItemStack);
         }
+        container.addItem(replaceItemStack)
 
     }
     public static spawnItem(target: Block | Entity, item: string | ItemStack, number: number = 1, location: Vector3 | undefined = undefined) {
