@@ -18,7 +18,7 @@
       }
     },
     "description": {
-      "identifier": "farmersdelight:wild_potatoes",
+      "identifier": "farmersdelight:wild_potatoes_item",
       "menu_category": {
         "category": "nature",
         "group": "itemGroup.name.nature"
